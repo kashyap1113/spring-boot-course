@@ -8,7 +8,7 @@
 <title>Todo List</title>
 </head>
 <body>
-<h3>Your Todos</h3>
+<h3>Hello ${username}</h3>
 <br>
 <table>
     <caption>Here is list of your Todos</caption>
@@ -26,6 +26,7 @@
 	            <td>${todo.description}</td>
 	            <td>${todo.targetDate}</td>
 	            <td>${todo.done}</td>
+	            <td><a href="/delete-todo?id=${todo.id}">Delete</a></td>
 	        </tr>
         </c:forEach>
     </tbody>
