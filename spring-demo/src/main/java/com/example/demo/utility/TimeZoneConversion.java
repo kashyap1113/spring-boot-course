@@ -69,5 +69,12 @@ public class TimeZoneConversion {
 		
 		serverMillis = tzc.convertUserMillisToServerMillis(userMillis);
 		System.err.println("user to server    " + serverMillis);
+		
+		// One liner version to get zoned date time 
+		ZonedDateTime zdt = ZonedDateTime.of(
+				LocalDateTime.parse("2021-01-15 21:00:25", DateTimeFormatter.ofPattern(SQL_DATE_TIME_FORMAT)), 
+				ZoneId.of("Asia/Kolkata")
+				);
+		System.err.println(zdt.withZoneSameInstant(ZoneId.of("UTC")).format(DateTimeFormatter.ofPattern(SQL_DATE_TIME_FORMAT)));
 	}
 }
