@@ -51,7 +51,7 @@ public class TimeZoneConversion {
 		return zdt.toInstant().toEpochMilli();
 	}
 	
-	public static void main(String[] args) {
+	public static void _main(String[] args) {
 		TimeZoneConversion tzc = new TimeZoneConversion("Asia/Kolkata");
 		String dateTime = "2021-01-15 15:30:25";
 		String convertedTime = tzc.convertDateTimeToUserTimeZone(dateTime, "yyyy-MM-dd HH:mm:ss");

@@ -7,8 +7,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-Your Todos : ${todoNames}
-<br>
-<a href="/add-todo">Click Here</a> to add new Todo.
+<form method="post">
+Description : <input type="text" name="desc"></input> <input type="submit"></input>
+</form>
 </body>
 </html>

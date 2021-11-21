@@ -80,4 +80,10 @@ public class Todo {
 		Todo other = (Todo) obj;
 		return id == other.id;
 	}
+
+	@Override
+	public String toString() {
+		return "Todo [id=" + id + ", user=" + user + ", description=" + description + ", targetDate=" + targetDate
+				+ ", isDone=" + isDone + "]";
+	}
 }
