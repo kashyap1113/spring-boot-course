@@ -51,7 +51,7 @@ public class TimeZoneConversion {
 		return zdt.toInstant().toEpochMilli();
 	}
 	
-	public static void _main(String[] args) {
+	public static void main(String[] args) {
 		TimeZoneConversion tzc = new TimeZoneConversion("Asia/Kolkata");
 		String dateTime = "2021-01-15 15:30:25";
 		String convertedTime = tzc.convertDateTimeToUserTimeZone(dateTime, "yyyy-MM-dd HH:mm:ss");
@@ -76,5 +76,8 @@ public class TimeZoneConversion {
 				ZoneId.of("Asia/Kolkata")
 				);
 		System.err.println(zdt.plusHours(2).withZoneSameInstant(ZoneId.of("UTC")).format(DateTimeFormatter.ofPattern(SQL_DATE_TIME_FORMAT)));
+		
+		zdt = ZonedDateTime.of(LocalDateTime.ofInstant(Instant.ofEpochMilli(1610724625000l), ZoneId.of("Asia/Kolkata")), ZoneId.of("Asia/Kolkata"));
+		System.err.println("original    " + zdt + "    " + zdt.withZoneSameInstant(ZoneId.of("UTC")));
 	}
 }
